@@ -27,6 +27,7 @@ program
 	.option('--setting', 'open options menu')
 	.option('')
 	.option('-p, --pid <pid(s)>', 'download illusts by PID, multiple PIDs separated by commas (,)')
+	.option('-up, --upid <pid(s)>', 'download illusts by PIDgetUid, multiple PIDs separated by commas (,)')
 	.option('-u, --uid <uid(s)>', 'download / update illusts by UID, multiple UIDs separated by commas (,)')
 	.option('')
 	.option('-f, --follow', 'download / update illusts from your public follows')
@@ -104,6 +105,14 @@ handleArgv()
 			if (typeof pids == 'string') {
 				pids = pids.split(',');
 				await pixiv.downloadByPIDs(pids);
+			} else help();
+		}
+		if (program.upid) {
+			//得到uPID
+			let pids = program.upid;
+			if (typeof pids == 'string') {
+				pids = pids.split(',');
+				await pixiv.downloadByPidGetUid(pids);
 			} else help();
 		}
 

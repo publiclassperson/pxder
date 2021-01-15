@@ -410,6 +410,42 @@ class PixivFunc {
 		}
 		await Downloader.downloadByIllusts(jsons);
 	}
+	/**
+	 * 根据PID查询Uid下载该画师所有插画
+	 * @param {Array} pids 作品PID
+	 * @memberof PixivFunc
+	 */
+	async downloadByPidGetUid(pids){
+		const uids = [];
+		// const dirPath = Path.join(__config.download.path, 'PID');
+		// Fse.ensureDirSync(dirPath);
+		// const exists = Fse.readdirSync(dirPath)
+		// 	.map(file => {
+		// 		const search = /^\(([0-9]+)\)/.exec(file);
+		// 		if (search && search[1]) return search[1];
+		// 		return null;
+		// 	})
+		// 	.filter(pid => pid);
+		for (const pid of pids) {
+			// if (exists.includes(pid)) continue;
+			try {
+				uids.push(await this.pixiv.illustDetail(pid).then(json => json?.illust?.image_urls?.user.id));
+			} catch (error) {
+				console.log(`${pid} does not exist`.gray);
+			}
+		}
+			//得到文件夹内所有UID
+		Fse.ensureDirSync(__config.download.path);
+		const files = Fse.readdirSync(__config.download.path);
+		for (const file of files) {
+			const search = /^\(([0-9]+)\)/.exec(file);
+			if (search) uids.push(search[1]);
+		}
+		//下载
+		const illustrators = [];
+		uids.forEach(uid => illustrators.push(new Illustrator(uid)));
+		await Downloader.downloadByIllustrators(illustrators);
+	}
 }
 
 module.exports = PixivFunc;
