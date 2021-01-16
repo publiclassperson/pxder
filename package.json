@@ -67,7 +67,7 @@
   "name": "pxder",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tsuk1ko/pxder.git"
+    "url": "git+https://github.com/publiclassperson/pxder.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
