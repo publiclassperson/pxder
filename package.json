@@ -1,8 +1,37 @@
 {
-  "name": "pxder",
-  "version": "2.11.5",
-  "description": "Download illusts from pixiv.net P站插画批量下载器",
-  "main": "index.js",
+  "_from": "pxder",
+  "_id": "pxder@2.11.5",
+  "_inBundle": false,
+  "_integrity": "sha512-7jDW+8Q8+VMWLtaU/GEf40QvgdszssrjTU3C5T2Dr1hm6Uskh5czt+UrvFnW8WjuEN6Zz1BWOwKrGDUO0WEgHw==",
+  "_location": "/pxder",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "pxder",
+    "name": "pxder",
+    "escapedName": "pxder",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/pxder/-/pxder-2.11.5.tgz",
+  "_shasum": "b8419267d59e94ad083315c47ffc3d5fb6dba669",
+  "_spec": "pxder",
+  "_where": "/data/data/com.termux/files/usr/lib/node_modules",
+  "author": {
+    "name": "Jindai Kirin"
+  },
+  "bin": {
+    "pxder": "bin/pxder"
+  },
+  "bugs": {
+    "url": "https://github.com/Tsuk1ko/pxder/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "appdata-path": "^1.0.0",
     "axios": "^0.21.0",
@@ -16,6 +45,8 @@
     "readline-sync": "^1.4.10",
     "socks-proxy-agent": "^5.0.0"
   },
+  "deprecated": false,
+  "description": "Download illusts from pixiv.net P站插画批量下载器",
   "devDependencies": {
     "@types/readline-sync": "^1.4.3",
     "eslint": "^7.15.0",
@@ -25,25 +56,21 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^5.0.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "pxder": "./bin/pxder"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tsuk1ko/pxder.git"
-  },
+  "homepage": "https://github.com/Tsuk1ko/pxder#readme",
   "keywords": [
     "pixiv",
     "downloader",
     "illust"
   ],
-  "author": "Jindai Kirin",
   "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Tsuk1ko/pxder/issues"
+  "main": "index.js",
+  "name": "pxder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tsuk1ko/pxder.git"
   },
-  "homepage": "https://github.com/Tsuk1ko/pxder#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.11.5"
 }
